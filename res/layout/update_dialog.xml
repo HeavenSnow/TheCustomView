@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff" >
+    
+    <LinearLayout 
+        android:id="@+id/ll_title"
+       	android:layout_width="match_parent"
+       	android:layout_height="@dimen/directory_title_height"
+       	android:orientation="vertical">
+	    <TextView 
+	        android:id="@+id/dialog_title"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/directory_title_height"
+	        style="@style/directory_text_model"
+	        android:text="hhh"
+	        android:gravity="center_vertical"/>
+	    
+	    <TextView 
+	        android:id="@+id/with_x_title"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/directory_title_height"
+	        style="@style/directory_text_model"
+	        android:text="fff"
+	        android:drawableRight="@drawable/icon_x"
+	        android:paddingRight="@dimen/normal_margin"
+	        android:visibility="gone"
+	        android:gravity="center_vertical"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="ddd"
+        android:layout_below="@id/ll_title"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        style="@style/first_content_text_model"/>
+    
+    <LinearLayout 
+        android:id="@+id/ll_btn"
+       	android:layout_width="match_parent"
+       	android:layout_height="45dp"
+       	android:layout_margin="@dimen/normal_margin"
+       	android:layout_alignParentBottom="true" >
+       	
+        <TextView
+	       android:id="@+id/dialog_cancel"
+	       android:layout_width="0dp"
+	       android:layout_height="match_parent"
+	       android:layout_weight="1"
+	       android:text="aaa"
+	       style="@style/dialog_cancel_text"
+	       android:layout_marginRight="@dimen/normal_margin"
+	       />
+    
+	    <TextView
+	        android:id="@+id/dialog_sure"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:text="bbb"
+	        style="@style/dialog_sure_text"
+	        />
+    </LinearLayout>
+
+</RelativeLayout>
