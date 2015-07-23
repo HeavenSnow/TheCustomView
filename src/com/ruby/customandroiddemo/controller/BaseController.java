@@ -4,9 +4,8 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-
-import net.iaf.framework.exception.IException;
-import net.iaf.framework.imgload.AsyncTask;
+import com.ruby.customandroiddemo.exception.IException;
+import com.ruby.customandroiddemo.utils.AsyncTask;
 
 /**
  * Controller 基类

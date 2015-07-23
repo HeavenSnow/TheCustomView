@@ -1,11 +1,12 @@
 package com.ruby.customandroiddemo.utils;
 
-import net.iaf.framework.app.BaseApplication;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.telephony.TelephonyManager;
+
+import com.ruby.customandroiddemo.app.BaseApplication;
 
 /**
  * 应用版本相关的工具类

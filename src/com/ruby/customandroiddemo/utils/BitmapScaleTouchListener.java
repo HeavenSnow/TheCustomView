@@ -1,12 +1,9 @@
 package com.ruby.customandroiddemo.utils;
 
-import com.dhl.imagecaptrue.zxing.utils.DisplayUtil;
-
 import android.app.Activity;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.util.FloatMath;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;

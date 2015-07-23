@@ -1,19 +1,16 @@
 package com.ruby.customandroiddemo.db;
 
 import java.util.List;
-
-import net.iaf.framework.app.BaseApplication;
-import net.iaf.framework.exception.DBException;
-import net.iaf.framework.util.FileUtils;
-import net.iaf.framework.util.Loger;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.dhl.imagecaptrue.app.AppConfig;
-import com.dhl.imagecaptrue.dao.CustomPathDatabaseContext;
+import com.ruby.customandroiddemo.app.BaseApplication;
+import com.ruby.customandroiddemo.exception.DBException;
+import com.ruby.customandroiddemo.utils.FileUtils;
+import com.ruby.customandroiddemo.utils.Loger;
+import com.ruby.customandroiddemo.utils.PhoneStateUtil;
 
 /**
  * SQLiteOpenHelper的基础类
@@ -28,10 +25,12 @@ public abstract class DBHelper extends SQLiteOpenHelper {
 	
 	// 数据库表创建语句
 	private List<String> databaseCreate;
+	
+	public static String dbPath = PhoneStateUtil.getExternalStoragePath() + "";
 
 	protected DBHelper(String dbName, int dbVersion, List<String> databaseCreate) {
 		super(new CustomPathDatabaseContext(
-				BaseApplication.getContext(), AppConfig.DB_IMAGE_CAPTURE), dbName, null, dbVersion);
+				BaseApplication.getContext(), dbPath), dbName, null, dbVersion);
 		this.databaseCreate = databaseCreate;
 		if(db==null){ //重复该操作可能报错
 			Loger.e("db is null");
@@ -39,9 +38,8 @@ public abstract class DBHelper extends SQLiteOpenHelper {
 		}
 		
 		// 如果数据库被手动删除，那么重新创建起来
-		if (!FileUtils.isFileExist(AppConfig.DB_IMAGE_CAPTURE + dbName)) {
+		if (!FileUtils.isFileExist(dbPath + dbName)) {
 			Loger.e("db is deleted, create it.");
-//			onCreate(db);
 			if (db != null) {
 				db.close();
 			}

@@ -2,7 +2,6 @@ package com.ruby.customandroiddemo.utils;
 
 import java.lang.reflect.Method;
 
-import net.iaf.framework.app.BaseApplication;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.location.LocationManager;
@@ -10,6 +9,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
+
+import com.ruby.customandroiddemo.app.BaseApplication;
 
 /**
  * 获取电话状态的工具类
@@ -73,28 +74,6 @@ public class PhoneStateUtil {
 		}
 		return false;
 	}
-
-	/**
-	 * 计算sd卡剩余空间，返回单位K
-	 * 
-	 * @return
-	 */
-//	public static double getSDCardStateAndAvailableSize() {
-//		String state = Environment.getExternalStorageState();
-//		if (Environment.MEDIA_CHECKING.equals(state)) {
-//		}
-//		if (!Environment.MEDIA_MOUNTED.equals(state)) {
-//			return 0;
-//		}
-//		String direction = Environment.getExternalStorageDirectory().toString();
-//		try {
-//			StatFs stat = new StatFs(direction);
-//			return stat.getAvailableBlocks() * (long) stat.getBlockSize()
-//					/ 1024f;
-//		} catch (Exception e) {
-//			return 0;
-//		}
-//	}
 
 	/**
 	 * GPS是否处于可写状态

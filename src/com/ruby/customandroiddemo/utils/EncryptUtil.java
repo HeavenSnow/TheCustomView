@@ -1,11 +1,9 @@
 package com.ruby.customandroiddemo.utils;
 
 import java.security.MessageDigest;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-
 
 public class EncryptUtil {
 	
@@ -38,7 +36,6 @@ public class EncryptUtil {
 	private static byte[] iv = {1,2,3,4,5,6,7,8};
 	
 	public static String encryptDES(String encryptString, String encryptKey) {
-		//IvParameterSpec zeroIv = new IvParameterSpec(new byte[8]);
 		try{
 			IvParameterSpec zeroIv = new IvParameterSpec(encryptKey.substring(0, 8).getBytes());
 			SecretKeySpec key = new SecretKeySpec(encryptKey.substring(0, 8).getBytes(), "DES");
@@ -47,7 +44,6 @@ public class EncryptUtil {
 			byte[] encryptedData = cipher.doFinal(encryptString.getBytes());
 		 
 			return Base64.encode(encryptedData);
-				//return new String(encryptedData);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -63,7 +59,6 @@ public class EncryptUtil {
 	  * @return
 	  */
 	 public static String encryptDES2(String encryptString, String encryptKey) {
-	  //IvParameterSpec zeroIv = new IvParameterSpec(new byte[8]);
 	  try{
 	   IvParameterSpec zeroIv = new IvParameterSpec(iv);  
 	         SecretKeySpec key = new SecretKeySpec(encryptKey.getBytes(), "DES");  
@@ -71,27 +66,21 @@ public class EncryptUtil {
 	         cipher.init(Cipher.ENCRYPT_MODE, key, zeroIv);  
 	         String tmp = Base64.encode(encryptString.getBytes("UTF-8"));  
 	         byte[] encryptedData = cipher.doFinal(tmp.getBytes("UTF-8"));  
-	        /* Base64 base64encoder = new Base64(); 
-	         String encode=base64encoder.encode(encryptedData); */
 	         return Base64.encode(encryptedData); 
 	   
 	  } catch (Exception e) {
 	   e.printStackTrace();
 	  } 
 	  return "";
-	  
 	 }
 	
 	public static String decryptDES(String decryptString, String decryptKey) throws Exception {
 		byte[] byteMi = Base64.decode(decryptString);
 		IvParameterSpec zeroIv = new IvParameterSpec(iv);
-		//IvParameterSpec zeroIv = new IvParameterSpec(new byte[8]);
 		SecretKeySpec key = new SecretKeySpec(decryptKey.getBytes(), "DES");
 		Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
 		cipher.init(Cipher.DECRYPT_MODE, key, zeroIv);
 		byte decryptedData[] = cipher.doFinal(byteMi);
-		//byte decryptedData[] = cipher.doFinal(decryptString.getBytes());
-	 
 		return new String(decryptedData);
 	}
 }

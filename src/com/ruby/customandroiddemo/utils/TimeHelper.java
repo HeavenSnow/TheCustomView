@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import android.text.TextUtils;
+
 /**
  * 时间的工具类
  * @author zgg
@@ -420,6 +420,7 @@ public class TimeHelper {
 			}
 		}
 	}
+	
 	/**
 	 * 获取时间
 	 * 
@@ -441,7 +442,6 @@ public class TimeHelper {
 			long pass = date.getTime();
 			long now = System.currentTimeMillis();
 			GregorianCalendar gcNow = new GregorianCalendar();
-			// System.out.println("now-pass:" + ((now-pass)/1000/60/60));
 
 			if ((now - pass) / 1000 < 60) {
 				if (now - pass <= 0) {

@@ -1,9 +1,3 @@
-/**
- * @Description: TODO
- * @author: Zhou Haitao(zhouhaitao@yazuo.com)
- * @create: 2012-7-9
- */
-
 package com.ruby.customandroiddemo.exception;
 /**
  * 没有网络异常

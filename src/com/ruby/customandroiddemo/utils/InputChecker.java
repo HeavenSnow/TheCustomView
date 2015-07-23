@@ -56,7 +56,6 @@ public class InputChecker {
 	 * @return
 	 */
 	public static boolean checkMobile(String str) {
-		// String regex = "^1(3[0-9]|5[012356789]|8[0789])\\d{8}$";
 		return isMatcher("^[1][3-8]+\\d{9}", str);
 	}
 	
@@ -88,7 +87,6 @@ public class InputChecker {
 	 * @return
 	 */
 	public static boolean checkEmail(String str) {
-//		String reg = "^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$";
 		String reg = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
 		
 		return isMatcher(reg, str);
@@ -117,7 +115,6 @@ public class InputChecker {
 	private static boolean isMatcher(String regex, String str) {
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(str);
-//		return m.find();
 		return m.matches();
 	}
 	
@@ -156,9 +153,7 @@ public class InputChecker {
 	 * @return true 为是正确的车牌号
 	 */
 	public static boolean isCarNo(String carno){
-		
 		String regex = "[\u4eac\u6caa\u6d59\u82cf\u7ca4\u9c81\u664b\u5180\u8c6b\u5ddd\u6e1d\u8fbd\u5409\u9ed1\u7696\u9102\u6e58\u8d63\u95f5\u9655\u7518\u5b81\u8499\u6d25\u8d35\u4e91\u6842\u743c\u9752\u65b0\u85cf][a-zA-Z][0-9a-zA-Z]{5}";
-//		String regex = "[\u4E00-\u9FFF][a-zA-Z][0-9a-zA-Z]{5}";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(carno);
 		return matcher.matches();

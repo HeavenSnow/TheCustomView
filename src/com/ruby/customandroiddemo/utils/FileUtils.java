@@ -1,10 +1,3 @@
-/**
- * @Description: TODO
- * @author: {Zhou Haitao.  }
- * @version: 1.0
- * @see 
- */
-
 package com.ruby.customandroiddemo.utils;
 
 import java.io.File;

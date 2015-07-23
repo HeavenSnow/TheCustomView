@@ -1,10 +1,3 @@
-/**
- * @Description: TODO
- * @author: {Zhou Haitao.  }
- * @version: 1.0
- * @see 
- */
-
 package com.ruby.customandroiddemo.utils;
 
 import android.annotation.SuppressLint;
@@ -21,7 +14,6 @@ import android.view.WindowManager;
 
 /**
  * Activity帮助类
- * @author Bob
  *
  */
 public class ActivityHelper {

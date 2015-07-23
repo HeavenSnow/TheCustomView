@@ -1,9 +1,3 @@
-/**
- * @Description: TODO
- * @author: Zhou Haitao(zhouhaitao@yazuo.com)
- * @create: 2012-9-12
- */
-
 package com.ruby.customandroiddemo.http;
 
 import java.io.BufferedInputStream;
@@ -20,31 +14,28 @@ import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-
-import net.iaf.framework.Config;
-import net.iaf.framework.app.BaseApplication;
-import net.iaf.framework.exception.NetworkException;
-import net.iaf.framework.exception.NoNetworkException;
-import net.iaf.framework.exception.TimeoutException;
-import net.iaf.framework.util.Loger;
-import net.iaf.framework.util.PhoneStateUtil;
-
 import org.apache.http.HttpStatus;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
+import org.apache.http.protocol.HTTP;
+import com.ruby.customandroiddemo.app.BaseApplication;
+import com.ruby.customandroiddemo.exception.NetworkException;
+import com.ruby.customandroiddemo.exception.NoNetworkException;
+import com.ruby.customandroiddemo.exception.TimeoutException;
+import com.ruby.customandroiddemo.utils.Loger;
+import com.ruby.customandroiddemo.utils.PhoneStateUtil;
 /**
  * 网络连接工具方法
  * @author Bob
  *
  */
 public class URLConnectionHelper {
-	private static final String ENCODING = Config.ENCODING;
-	private static final int CONNECTION_TIMEOUT = Config.TIMEOUT;
+	private static final String ENCODING = HTTP.UTF_8;
+	private static final int CONNECTION_TIMEOUT = 20000;
 
 	/**
 	 * 拼接请求参数字符串的方法
